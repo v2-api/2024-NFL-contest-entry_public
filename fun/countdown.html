@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .countdown {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+        .countdown span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .countdown span.time {
+            color: #FF5733;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Countdown to the 2024 Indiana Linkup!</h1>
+<div class="countdown">
+    <span>Days: </span><span id="days" class="time">0</span> | 
+    <span>Hours: </span><span id="hours" class="time">0</span> | 
+    <span>Minutes: </span><span id="minutes" class="time">0</span> | 
+    <span>Seconds: </span><span id="seconds" class="time">0</span> | 
+    <span>Milliseconds: </span><span id="milliseconds" class="time">000</span> | 
+    <span>Nanoseconds: </span><span id="nanoseconds" class="time">000000000</span>
+</div>
+
+<script>
+    function updateCountdown() {
+        const targetDate = new Date("November 16, 2024 12:00:00").getTime();
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining <= 0) {
+            document.querySelector('.countdown').innerHTML = "<h2>Time's Up!</h2>";
+            return;
+        }
+
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        const milliseconds = Math.floor((timeRemaining % 1000));
+        const nanoseconds = (milliseconds * 1000000).toString().padStart(9, '0');
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+        document.getElementById("milliseconds").innerText = milliseconds.toString().padStart(3, '0');
+        document.getElementById("nanoseconds").innerText = nanoseconds;
+    }
+
+    // Update the countdown every 10 milliseconds
+    setInterval(updateCountdown, 10);
+</script>
+
+</body>
+</html>
