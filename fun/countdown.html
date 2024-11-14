@@ -27,6 +27,7 @@
 <body>
 
 <h1>Countdown to the 2024 Indiana Linkup!</h1>
+<h3>(November 16 at 12:30)</h3>
 <div class="countdown">
     <span>Days: </span><span id="days" class="time">0</span> | 
     <span>Hours: </span><span id="hours" class="time">0</span> | 
@@ -35,6 +36,7 @@
     <span>Milliseconds: </span><span id="milliseconds" class="time">000</span> | 
     <span>Nanoseconds: </span><span id="nanoseconds" class="time">000000000</span>
 </div>
+<h3 id="timeline">🏠🚌---------🏠</h3>
 
 <script>
     function updateCountdown() {
@@ -47,6 +49,7 @@
             return;
         }
 
+        // Update countdown
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
@@ -60,6 +63,31 @@
         document.getElementById("seconds").innerText = seconds;
         document.getElementById("milliseconds").innerText = milliseconds.toString().padStart(3, '0');
         document.getElementById("nanoseconds").innerText = nanoseconds;
+
+        // Timeline logic (move bus every 15 minutes starting 2.5 hours before target time)
+        const timeBeforeTarget = targetDate - 2.5 * 60 * 60 * 1000; // 2.5 hours before 12:30 PM
+        if (now >= timeBeforeTarget) {
+            updateTimeline(now, targetDate);
+        }
+    }
+
+    // Function to update the timeline with the bus moving every 15 minutes
+    function updateTimeline(now, targetDate) {
+        const totalMinutesRemaining = Math.floor((targetDate - now) / (1000 * 60));
+        const numberOfDashes = Math.floor(totalMinutesRemaining / 15); // Move the bus every 15 minutes
+
+        let timeline = "🏠";
+        for (let i = 0; i < numberOfDashes; i++) {
+            timeline += "-";
+        }
+        timeline += "🚌";
+        const remainingDashes = 15 - numberOfDashes;
+        for (let i = 0; i < remainingDashes; i++) {
+            timeline += "-";
+        }
+        timeline += "🏠";
+
+        document.getElementById("timeline").innerText = timeline;
     }
 
     // Update the countdown every 10 milliseconds
