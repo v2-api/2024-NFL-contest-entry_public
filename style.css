@@ -8,9 +8,6 @@
     h4 {
         font-size: 18px !important;
     }
-    .desktop-footer-bottom {
-        height: 30vh !important;
-    }
 }
 .active-link {
     color:#a4edb0 !important;
@@ -78,10 +75,6 @@ a {
 a:hover {
     color:#f2fff4;
 }
-.desktop-footer-bottom {
-    height: 70vh;
-}
-
 
 /* palette: */
 /* green: */
