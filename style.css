@@ -1,0 +1,108 @@
+@media (max-width: 1000px) {
+    p, a, li{
+    font-size: 16px !important;
+    }
+    h1 {
+        font-size: 22px !important;
+    }
+    h4 {
+        font-size: 18px !important;
+    }
+}
+.active-link {
+    color:#a4edb0 !important;
+}
+.active-link:hover {
+    color:#f2fff4 !important;
+}
+.footer p{
+    color:#a4edb0;
+}
+p, a, li{
+    font-size: 20px;
+    color:#000a02;
+}
+h1 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 20px;
+}
+
+html {
+    text-align: center;
+}
+body {
+    background-color:#f2fff4;
+    overflow-x: hidden;
+}
+.header {
+    background-color:#348041;
+}
+img {
+    border-radius: 8px;
+    width: 70%;
+}
+video {
+    border-radius: 8px;
+    width: 90%;
+}
+.col-sm {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.footer {
+    background-color:#348041;
+}
+.img-bg {
+    color: #000a02;
+    padding-right:20px;
+    padding-left:20px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.background {
+    background: url("https://images.pexels.com/photos/7931190/pexels-photo-7931190.jpeg");
+    background-position: 100% -1000px;
+    border-radius: 5px;
+}
+.header a {
+    padding-right:10px;
+    padding-left:10px;
+    color:#000a02;
+    transition: color 0.3s ease;
+}
+a {
+    color:#000a02;
+    transition: color 0.3s ease;
+}
+.header a:hover {
+    color:#f2fff4;
+}
+body a:hover {
+    color:#a4edb0;
+}
+button {
+    border-radius: 7px;
+    background-color:#a4edb0;
+    transition: transform 0.3s ease;
+}
+button:hover {
+    transform: translateY(-5px);
+    
+}
+
+/* palette: */
+/* green: */
+/* #348041 - dark */
+/* #a4edb0 - light */
+/* #000a02 - black */
+/* #f2fff4 - white */
+
+/* purple: */
+/* #cc9bf2 - light */
+/* #260440 - dark */
+/* #f3ebfa - white */
+/* #0c0114 - black */
