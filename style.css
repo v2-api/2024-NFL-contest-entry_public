@@ -89,6 +89,7 @@ button {
     border-radius: 7px;
     background-color:#a4edb0;
     transition: transform 0.3s ease;
+    color:#000a02;
 }
 button:hover {
     transform: translateY(-5px);
