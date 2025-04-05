@@ -8,6 +8,10 @@
     h4 {
         font-size: 18px !important;
     }
+    .padded {
+        padding-left:2vw !important;
+        padding-right:2vw !important;
+    }
 }
 .active-link {
     color:#a4edb0 !important;
@@ -18,15 +22,22 @@
 .footer p{
     color:#a4edb0;
 }
+.padded {
+    padding-left:15vw;
+    padding-right:15vw;
+}
 p, a, li{
-    font-size: 20px;
+    font-size: 19px;
     color:#000a02;
 }
+p {
+    padding-top: 7px;
+}
 h1 {
-    font-size: 30px;
+    font-size: 29px;
 }
 h4 {
-    font-size: 20px;
+    font-size: 19px;
 }
 
 html {
@@ -41,11 +52,12 @@ body {
 }
 img {
     border-radius: 8px;
-    width: 70%;
+    width: 90%;
 }
 iframe {
     border-radius: 8px;
-    width: 70vw;
+    width: 100%; 
+    max-width: 70vw; 
     height: 50vh;
 }
 .col-sm {
